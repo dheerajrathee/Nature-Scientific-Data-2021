@@ -1,6 +1,11 @@
-% Code by @ Dr Dheeraj Rathee and Dr Haider Raza
+% Dr Dheeraj Rathee
+% Provide CIC / School of Computing and Electronics Engineering, University of Essex, Colchester, England
+% contact: d.rathee@essex.ac.uk/dheeraj.rathee@nhs.net
+%
+% Dr Haider Raza
 % School of Computing and Electronics Engineering, University of Essex, Colchester, England
-% contact: d.rathee@essex.ac.uk/h.raza@essex.ac.uk
+% contact: h.raza@essex.ac.uk
+%
 % Date: 13/05/2019
 % Last updated: 31/12/2020
 
