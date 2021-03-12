@@ -1,6 +1,9 @@
-% Code by @ Dr Haider Raza
-% Institute for Analytics and Data Science, School of Computing and
-% Electronics Engineering, University of Essex, Colchester, England
+% Dr Dheeraj Rathee
+% Provide CIC / School of Computing and Electronics Engineering, University of Essex, Colchester, England
+% contact: d.rathee@essex.ac.uk/dheeraj.rathee@nhs.net
+%
+% Dr Haider Raza
+% School of Computing and Electronics Engineering, University of Essex, Colchester, England
 % contact: h.raza@essex.ac.uk
 % Date: 13/05/2019
 
