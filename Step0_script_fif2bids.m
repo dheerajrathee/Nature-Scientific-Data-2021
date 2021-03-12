@@ -1,6 +1,6 @@
-% Code by @ Dr Haider Raza
+% Code by @ Dr Dheeraj Rathee and Dr Haider Raza
 % School of Computing and Electronics Engineering, University of Essex, Colchester, England
-% contact: h.raza@essex.ac.uk
+% contact: d.rathee@essex.ac.uk/h.raza@essex.ac.uk
 % Date: 13/05/2019
 % Last updated: 31/12/2020
 
