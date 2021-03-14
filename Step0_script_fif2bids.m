@@ -18,38 +18,38 @@ warning off
 %% PATH to data
 
 % add filedtrip to path of your Matlab. You can download it from
-% https://github.com/sagihaider/fieldtrip.git
+% https://github.com/dheerajrathee/fieldtrip.git
 restoredefaultpath
-% addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
-addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
+% addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
 ft_defaults
 
 currFolder = pwd;
 addpath(genpath(currFolder));
 
-% pathdatain = '/Users/sagihaider/MEG/DataMEG_fif'; mac haider
-pathdatain = 'C:\Users\hr17576\OneDrive - University of Essex\Data\MEG\DataMEG_fif';
+% Define paths for Elekta/MEGIN fif files and for root folder of MEG BIDS dataset 
+% pathdatain = 'C:\Users\hr17576\OneDrive - University of Essex\Data\MEG\DataMEG_fif';
 % pathdataout = '/Users/sagihaider/MEG/MEG_BIDS'; % Path to store the data
 % in BIDS format mac hadier
-pathdataout = 'E:\Data\MEG\MEG_BIDS'
+% pathdataout = '...Data\MEG\MEG_BIDS'
 
-%% Subject indexes
+%% Participants indexes
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
 
-
+% Participants Demographics
 age = [37, 36, 23, 23, 32, 28, 32, 23, 29, 26, 30, 24, 36, 27, 40, 22, 23];
 sex = ['m'; 'm'; 'm'; 'f'; 'f'; 'm'; 'm'; 'm'; 'm'; 'm'; 'f'; 'm'; 'm'; 'm'; 'm'; 'm'; 'm'];
 
-%% Read each subject fif files to convert them into BIDS
-for sub=1:length(indsub)
+
+for sub=1:length(indsub) %% Loop over each Participants
     % Create a folder name  'sub-' num2str(indsub(sub))
     foldername = fullfile(pathdataout,['sub-' num2str(indsub(sub))]);
     mkdir(foldername)
-    for sess = 1:2
+    for sess = 1:2  %% Loop over each Session
         mkdir(fullfile(foldername,['ses-' num2str(sess)]))
         fullfilepathnameout = fullfile(foldername,['ses-' num2str(sess)],['meg']);
         mkdir(fullfilepathnameout);
         
+        % Define Input/Output fielnames 
         filenamein = ['P00' num2str(indsub(sub)) '_S0' num2str(sess) '.fif'];
         filenameout = ['sub-' num2str(indsub(sub)) '_ses-' num2str(sess) '_task-bcimici_meg.fif'];
         disp(['Processing ' filenamein]);
@@ -61,8 +61,8 @@ for sub=1:length(indsub)
                 fullfilenamein = fullfile(pathdatain, 'Session_02' , filenamein);
         end
         
-        events = ft_read_event(fullfilenamein);
-        hdr = ft_read_header(fullfilenamein);
+        events = ft_read_event(fullfilenamein); % Read Events
+        hdr = ft_read_header(fullfilenamein); % Read Header
         fullfilenameout = fullfile(fullfilepathnameout,filenameout);
         
         % The configuration structure should contains
@@ -82,9 +82,6 @@ for sub=1:length(indsub)
         cfg.events                      = events;
         cfg.participants.age            = age(sub);
         cfg.participants.sex            = sex(sub);
-        
-        
-%         cfg.scan.acq_time               = 
         
         
         % MEG Discription
@@ -109,16 +106,15 @@ for sub=1:length(indsub)
         %         cfg.coordsystem.HeadCoilCoordinates        = {};
         cfg.coordsystem.MEGCoordinateSystem        = 'ElektaNeuromag'; 
         cfg.coordsystem.MEGCoordinateUnits         = 'cm'; 
-        cfg.coordsystem.HeadCoilCoordinateSystem  = 'ElektaNeuromag';
-        cfg.coordsystem.HeadCoilCoordinateUnits  = 'cm';
+        cfg.coordsystem.HeadCoilCoordinateSystem   = 'ElektaNeuromag';
+        cfg.coordsystem.HeadCoilCoordinateUnits    = 'cm';
         cfg.coordsystem.HeadCoilCoordinateSystemDescription = 'Neuromag head coordinates, orientation RAS, origin between the ears';
         
         % %% columns in the channels.tsv
         % cfg.channels.name               = ft_getopt(cfg.channels, 'name'               , nan);  % REQUIRED. Channel name (e.g., MRT012, MEG023)
         % cfg.channels.type               = ft_getopt(cfg.channels, 'type'               , nan);  % REQUIRED. Type of channel; MUST use the channel types listed below.
         % cfg.channels.units              = ft_getopt(cfg.channels, 'units'              , nan);  % REQUIRED. Physical unit of the data values recorded by this channel in SI (see Appendix V: Units for allowed symbols).
-        
-        
-        data2bids(cfg);
+       
+        data2bids(cfg); 
     end
 end
