@@ -20,7 +20,7 @@ warning off
 % add filedtrip to path of your Matlab. You can download it from
 % https://github.com/dheerajrathee/fieldtrip.git 
 restoredefaultpath
-% addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
+% addpath '/Users/dheerajrathee/GitHub/fieldtrip-20201001'
 addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
 ft_defaults
 
@@ -41,9 +41,10 @@ if do_resample
     end
 end
 
-%% Subject indexes and Channel labels
+%% Subject indexes
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20]; 
 
+%% Select channel type to be used in analysis
 chansel_option = 'grad'; %('all'-all channels (306), 'grad'- gradiometers (204), 'mag'-magnetometers (102))
 
 %% Select Channel for further processing
