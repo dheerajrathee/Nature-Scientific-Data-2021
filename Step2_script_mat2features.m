@@ -18,7 +18,7 @@ warning off
 %% PATH to data
 
 % add filedtrip to path of your Matlab. You can download it from
-% https://github.com/sagihaider/fieldtrip.git 
+% https://github.com/dheerajrathee/fieldtrip.git 
 restoredefaultpath
 % addpath '/Users/sagihaider/GitHub/fieldtrip-20201001'
 addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
