@@ -31,10 +31,10 @@ rootpathData = 'E:\Data\MEG';
 % rootpathdatain = fullfile(rootpathData,'MEG_mat');
 rootpathdatain = fullfile(rootpathData,'DataMEG_mat');
 
-do_resample = 1;
+do_resample = 1; %Assign resmpling flag
 
 if do_resample
-    frq_resample = 250;
+    frq_resample = 250; % resampling frequency 
     rootpathdataout = fullfile(rootpathData,'DataMEG_matFeatures');
     if ~exist(rootpathdataout, 'dir')
         mkdir(rootpathdataout);
@@ -75,7 +75,7 @@ toi=[0.5 3.5]; % time duration of interest after que in secs.
 
 for iSub=1:length(indsub)
     
-    % Load training data
+    % Define matlab filename name generated in Step1
     filenamein = ['Session_01/sub-' num2str(indsub(iSub)) '_ses-1_task-bcimici_meg.mat'];
     
     disp(['Processing ' filenamein]);
@@ -87,7 +87,7 @@ for iSub=1:length(indsub)
     data_tr=ft_selectdata(cfg,dataMAT);
     
     disp(['Session 1 number of trails ' num2str(length(data_tr.trial))]);
-    clear dataMAT
+    clear dataMAT % clrear the mat file to save disk space 
     
     % Load test data
     filenamein = ['Session_02/sub-' num2str(indsub(iSub)) '_ses-2_task-bcimici_meg.mat'];
