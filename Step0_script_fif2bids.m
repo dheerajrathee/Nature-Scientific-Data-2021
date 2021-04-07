@@ -7,7 +7,7 @@
 % contact: h.raza@essex.ac.uk
 %
 % Date: 13/05/2019
-% Last updated: 31/12/2020
+% Last updated: 07/04/2021
 
 % Classes: 1-Both Hand Imagery, 2-Both Feet Imagery
 % 3-Word generation, 4-Subtraction
@@ -18,7 +18,7 @@ warning off
 %% PATH to data
 
 % add filedtrip to path of your Matlab. You can download it from
-% https://github.com/dheerajrathee/fieldtrip.git
+% https://github.com/fieldtrip/fieldtrip
 restoredefaultpath
 % addpath Fieldtrip path here
 ft_defaults
