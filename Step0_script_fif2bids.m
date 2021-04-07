@@ -20,17 +20,15 @@ warning off
 % add filedtrip to path of your Matlab. You can download it from
 % https://github.com/dheerajrathee/fieldtrip.git
 restoredefaultpath
-% addpath Fieldtrip path
+% addpath Fieldtrip path here
 ft_defaults
 
 currFolder = pwd;
 addpath(genpath(currFolder));
 
 % Define paths for Elekta/MEGIN fif files and for root folder of MEG BIDS dataset 
-% pathdatain = 'C:\Users\hr17576\OneDrive - University of Essex\Data\MEG\DataMEG_fif';
-% pathdataout = '/Users/sagihaider/MEG/MEG_BIDS'; % Path to store the data
-% in BIDS format mac hadier
-% pathdataout = '...Data\MEG\MEG_BIDS'
+% pathdatain = '...\MEG\DataMEG_fif';
+% pathdataout = '...\Data\MEG\MEG_BIDS' % Path to store the data
 
 %% Participants indexes
 indsub=[1,2,3,4,6,7,9,11,12,13,14,15,16,17,18,19,20];
@@ -97,7 +95,7 @@ for sub=1:length(indsub) %% Loop over each Participants
         % Dataset Discription
         cfg.dataset_description.Name                = 'A 306-channel MEG-BCI dataset recorded at 1KHz sampling frequency during four mental imagery tasks (i.e. hand imagery, feet imagery, subtraction imagery, and word generation imagery). The dataset contains two sessions of MEG recordings performed on separate days from 17 healthy participants using a typical BCI imagery paradigm';
         cfg.dataset_description.BIDSVersion         = '1.4';
-        cfg.dataset_description.Authors             = {'Raza, H.', 'Rathee, D.', 'Roy, S.', 'Prasad, G.'};
+        cfg.dataset_description.Authors             = {'Rathee, D.', 'Raza, H.', 'Roy, S.', 'Prasad, G.'};
         cfg.dataset_description.Funding             = {'InvestNI', 'DST-UKIERI-2016-17-0128', 'ESRC'};
         %cfg.dataset_description.DatasetDOI         = string
         cfg.dataset_description.Sponsorship         = 'InvestNI, DST-UKIERI, ESRC';
