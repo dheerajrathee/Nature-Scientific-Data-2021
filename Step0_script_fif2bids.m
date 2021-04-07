@@ -20,7 +20,7 @@ warning off
 % add filedtrip to path of your Matlab. You can download it from
 % https://github.com/dheerajrathee/fieldtrip.git
 restoredefaultpath
-% addpath 'C:\Users\hr17576\OneDrive - University of Essex\Research\MEGNature\fieldtrip'
+% addpath Fieldtrip path
 ft_defaults
 
 currFolder = pwd;
